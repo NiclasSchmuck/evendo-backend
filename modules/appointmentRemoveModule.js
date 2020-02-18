@@ -11,7 +11,7 @@ function appointmentList(req, res) {
                 console.log("Detected connection error");
                 res.sendStatus(500);
             } else {
-                db.query("DELETE FROM appointments WHERE USER = '" + req.body.username + "' AND ID = " + req.body.id + ";", function(err, result, fields) {
+                db.query("DELETE FROM appointments WHERE USER = :username AND ID = :id;", { username : req.body.username, id : req.body.id}, function(err, result, fields) {
                     if (err) {
                         res.status(500).send({
                             "error": err

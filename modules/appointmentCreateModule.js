@@ -8,7 +8,16 @@ function createAppointment(req, res) {
             console.log("Detected connection error");
             res.sendStatus(500);
         } else {
-            db.query("INSERT INTO appointments (USER, TITLE, DESCRIPTION, TIME_FROM, TIME_TO, INVITED, NOTIFY_AT, REPEAT_INTERVAL) VALUES ('" + req.body.username + "','" + req.body.title + "', '" + req.body.description + "', '" + req.body.time.from + "', '" + req.body.time.to + "', '" + req.body.invited + "', '" + req.body.notify + "', '" + req.body.repeatinterval + "');", function(err, result, fields) {
+            db.query("INSERT INTO appointments (USER, TITLE, DESCRIPTION, TIME_FROM, TIME_TO, INVITED, NOTIFY_AT, REPEAT_INTERVAL) VALUES (:user, :title, :description, :timefrom, :timeto, :invited, :notify, :repeatinterval);", {
+                user : req.body.username,
+                title: req.body.title,
+                description: req.body.description,
+                timefrom : req.body.time.from,
+                timeto: req.body.time.to,
+                invited: req.body.invited,
+                notify: req.body.notify,
+                repeatinterval: req.body.repeatinterval
+            }, function(err, result, fields) {
                 if (err) {
                     res.status(500).send({
                         "error": err
