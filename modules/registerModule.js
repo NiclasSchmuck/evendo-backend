@@ -7,7 +7,7 @@ function register(req, res) {
             console.log("Detected connection error");
             res.sendStatus(500);
         } else {
-            db.query("SELECT EXISTS(SELECT * FROM users WHERE EMAIL = :email OR username = :username) as existing;", { email: req.body.email, username: req.body.username }, function(err, result, fields) {
+            db.query("SELECT EXISTS(SELECT * FROM users WHERE EMAIL = ? OR username = ?) as existing;", [req.body.email,req.body.username], function(err, result, fields) {
                 if (err) {
                     res.status(500).send({
                         "error": err
@@ -24,7 +24,7 @@ function register(req, res) {
                         } else {
                             let password = bcrypt.hashSync(req.body.password, 10);
                             let email = req.body.email;
-                            db.query("INSERT INTO users (USERNAME,PASSWORD,EMAIL) VALUES(:username, :password, :email);", { username : req.body.username, password: password, email: email }, function(err, result, fields) {
+                            db.query("INSERT INTO users (USERNAME,PASSWORD,EMAIL) VALUES(?, ?, ?);",  [req.body.username, password, email ], function(err, result, fields) {
                                 if (err) {
                                     res.status(500).send({
                                         "error": err

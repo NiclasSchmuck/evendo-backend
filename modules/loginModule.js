@@ -8,7 +8,7 @@ function login(req, res) {
             console.log("Detected connection error");
             res.sendStatus(500);
         } else {
-            db.query("SELECT *  FROM users WHERE username = :username;", { username : req.body.username }, function(err, result, fields) {
+            db.query("SELECT *  FROM users WHERE username = ?;", [req.body.username], function(err, result, fields) {
                 if (err) {
                     res.status(500).send({
                         "error": err
