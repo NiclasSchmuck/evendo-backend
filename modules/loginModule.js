@@ -18,7 +18,7 @@ function login(req, res) {
                     if (result.length > 1) {
                         res.status(500).send({ "error": "data_inconsistency_checked" });
                     } else {
-                        if (result == undefined || result.length == 0) {
+                        if (result === undefined || result.length === 0) {
                             res.status(400).send({ "error": "bad credentials" })
                         } else {
                             result = result[0];

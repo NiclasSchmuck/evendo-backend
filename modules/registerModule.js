@@ -14,7 +14,7 @@ function register(req, res) {
                     });
                     db.end();
                 } else {
-                    if (result[0].existing == 0) {
+                    if (result[0].existing === 0) {
                         console.log(req.body)
                         if (!req.body.password || !req.body.email || !req.body.username) {
                             res.status(500).send({
