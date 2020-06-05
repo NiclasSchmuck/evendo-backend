@@ -3,6 +3,8 @@ const subdomain = require('express-subdomain');
 const bodyParser = require('body-parser')
 let webserver = express();
 const session = require('express-session');
+var path = require('path');
+global.appRoot = path.resolve(__dirname);
 
 webserver.set('trust proxy', 1);
 webserver.use(session({
@@ -27,6 +29,13 @@ webserver.use(eventRouter);
 webserver.use(todoRouter);
 
 
-webserver.listen(5050, function() {
+var server = webserver.listen(5050, function() {
     console.log("Evendo Backend is listening on :5050");
 });
+
+function stopServer() {
+    server.close();
+}
+
+exports.stopWebserver = stopServer;
+exports.app = webserver;

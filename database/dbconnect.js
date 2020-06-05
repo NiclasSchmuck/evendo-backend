@@ -2,7 +2,7 @@ function connectMySQL(config, callback) {
     const fs = require("fs");
     const mysql = require("mysql");
 
-    let rawdata = fs.readFileSync('./config/' + config);
+    let rawdata = fs.readFileSync(appRoot + '/config/' + config);
     let mysqlConfigParams = JSON.parse(rawdata);
 
     let db = mysql.createConnection({
