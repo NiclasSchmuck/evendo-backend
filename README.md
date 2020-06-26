@@ -7,7 +7,7 @@ to our Evendo Backend git repository.
 If you want to use our app, you don't have to install the backend yourself. But if you want: nothing is impossible.
 
 ### 2.1 Requirements
-MySQL and NodeJS installed
+MySQL and NodeJS installed, minimum of 200MB free RAM
 
 ### 2.2 Installation
 You have to take the .sql file out of this git repository and import it into your MySQL database. 
