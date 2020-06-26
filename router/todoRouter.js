@@ -16,18 +16,6 @@ router.post("/todo/create", function(req, res) {
             "data": req.body
         });
     } else {
-        if (!req.body.description) {
-            req.body.description = null;
-        }
-        if (!req.body.invited) {
-            req.body.invited = 0;
-        }
-        if (!req.body.repeatinterval) {
-            req.body.repeatinterval = 0;
-        }
-        if (!req.body.notify) {
-            req.body.notify = 0;
-        }
         createTodo(req, res);
     }
 });
