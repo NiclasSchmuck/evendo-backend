@@ -1,5 +1,7 @@
 # Evendo Backend
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0f7dd099c53742dfaa36bf33e3aa43c4)](https://app.codacy.com/manual/NiclasSchmuck/evendo-backend?utm_source=github.com&utm_medium=referral&utm_content=NiclasSchmuck/evendo-backend&utm_campaign=Badge_Grade_Dashboard)
+
 ## 1. Welcome
 to our Evendo Backend git repository.
 
