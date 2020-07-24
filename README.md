@@ -1,5 +1,5 @@
 # Evendo Backend
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7e0731da559e4649b2d397d9503f6b4e)](https://www.codacy.com/manual/NiclasSchmuck/evendo-backend?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=NiclasSchmuck/evendo-backend&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d1bcbc6812264aec895d3fe3f5f1aaeb)](https://www.codacy.com/manual/NiclasSchmuck/evendo-backend?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=NiclasSchmuck/evendo-backend&amp;utm_campaign=Badge_Grade)
 
 ## 1. Welcome
 to our Evendo Backend git repository.
